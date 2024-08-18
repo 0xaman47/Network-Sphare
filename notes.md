@@ -110,7 +110,7 @@ To create the Internet, ISPs must be interconnected, thus creating a *network of
 Much of the evolution of the structure of the Internet is driven by economics and national policy, rather than by performance consideration.
 
 Today's Internet is complex, consisting of a dozen or so tier-1 ISPs and hundreds of thousands of lower-tier ISPs. The ISPs are diverse in their coverage, with some spanning multiple continents and oceans, and others limited to narrow geographic regions. The lower-tier ISPs connect to the higher-tier ISPs and the higher-tier ISPs interconnect with one another. Users and content providers are customers of lower-tier ISPs and lower-tier ISPs are customers of higher-tier ISPs. Recently, major content providers (Google) have also created their own networks and connect directly into lower-tier ISPs where possible.
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\network_of_networks.png">
+<img src="E:\Network -Sphare\computer-networking\images\network_of_networks.png">
 
 ## 1.4 Delay, Loss and Throughput in Packet-Switched Networks
 
@@ -121,7 +121,7 @@ As a packet travels from one node (host or router) to the subsequent host along 
 
 #### Types of Delay
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\type_of_delays.png">
+<img src="E:\Network -Sphare\computer-networking\images\type_of_delays.png">
 
 ##### Processing Delay
 The **processing delay** consists of the time required to examine the packet's header and determine where to direct the packet. It may also include other factors, such as the time needed to check for bit-level errors occurred during transmission.
@@ -335,7 +335,7 @@ UDP is a no-frills, lightweight transport protocol, providing minimal services. 
 #### Services Not Provided by Internet Transport Protocols
 These two protocols do not provide timing or throughput guarantees, services not provided by today's Internet transport protocols. We therefore design applications to cope, to the greatest extent possible, with this lack of guarantees.
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\app_tras.png">
+<img src="E:\Network -Sphare\computer-networking\images\app_tras.png">
 
 ### 2.1.5 Application-Layer Protocols
 An **application-layer protocol** defines how an application's processes, running on different end systems, pass messages to each other. It defines:
@@ -399,7 +399,7 @@ Accept-language: fr
 
 The majority of HTTP requests use the GET method, used to request an object.
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\http_request.png">
+<img src="E:\Network -Sphare\computer-networking\images\http_request.png">
 
  The entity body (empty with `GET`) is used by the `POST` method, for example for filling out forms. The user is still requesting a Web page but the specific contents of the page depend on what the user entered into the form fields. When `POST` is used, the entity body contains what the user entered into the form fields.
 Requests can also be made with `GET` including the inputted data in the requested URL.
@@ -520,7 +520,7 @@ Having one single global DNS server would be simple, but it's not realistic beca
 #### A Distributed, Hierarchical Database
 The DNS uses a large number of servers, organized in a hierarchical fashion and distributed around the world.
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\dns-servers.png">
+<img src="E:\Network -Sphare\computer-networking\images\dns-servers.png">
 
 The three classes of DNS servers:
 
@@ -530,7 +530,7 @@ The three classes of DNS servers:
 
 Finally there are **local DNS servers** which is central to the DNS architecture. They are hosted by ISPs. When a hosts connects to one of these, the local DNS server provides the host with the IP addresses of one or more of its local DNS servers. Requests can ho up to the root DNS servers and back down.
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\distributedDNS.png">
+<img src="E:\Network -Sphare\computer-networking\images\distributedDNS.png">
 
 We can have both **recursive** and **iterative queries**.
 In **recursive queries** the user sends the request its nearest DNS which will ask to a higher-tier server, which will ask to lower order... the chain goes on until it reaches a DNS that can reply, the reply will follow the inverse path that the request had.
@@ -731,7 +731,7 @@ It is possible for an application developer to have reliable data transfer when 
 
 ### 3.3.1 UDP Segment Structure
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\udp_segment.png">
+<img src="E:\Network -Sphare\computer-networking\images\udp_segment.png">
 
 The UDP header has only four fields, each consisting of two bytes: 
  - `source port number`
@@ -803,7 +803,7 @@ TCP therefore splits data into smaller chunks and pairs each chunk of client dat
 
 ### 3.5.2 TCP Segment Structure
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\tcp-segment.png">
+<img src="E:\Network -Sphare\computer-networking\images\tcp-segment.png">
  - 32 bit sequence number and acknowledgement number necessary for reliable data transmission
  - 16 bit **receive window** used for flow control, indicates the number of bytes that a receiver is willing to accept
  - 4 bit **header length field**. The TCP header can be of a variable length due to the TCP options field (usually empty therefore usual length is 20 bytes)
@@ -912,7 +912,7 @@ We remember that **UDP has no flow control service**
 ### 3.5.6 TCP Connection Management
 #### How is the connection established? **Three-way handshake**
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\three-way.png">
+<img src="E:\Network -Sphare\computer-networking\images\three-way.png">
  1. The client-side TCP sends a special TCP segment to server-side TCP. This segment **doesn't contain any application-layer data** but the **flag bit SYN is set to 1**. The segment is referred to as a *SYN segment*. The client also **randomly chooses an initial sequence number** (`client_isn`) and **puts this number in the sequence number field of the initial TCP SYN segment**. (randomizing `client_isn` is interesting to avoid security attacks).
  2. The TCP SYN segment arrives at the server-side, it is extracted from the datagram. The server allocates the TCP buffers and variables to the connection and **sends a connection-granted segment to the client**. This segment also contains no application-layer data. The **SYN flag is set to 1**, the **ACK field in the header is set to `client_isn+1`**. **The server chooses its own initial sequence number `server_isn`** and **puts this value in the sequence number field of the TCP segment header**. This segment is referred to as *SYNACK segment*.
  3. Upon receiving the SYNACK segment, the client also allocates buffers and variables to the connection. The client then **sends the server yet another segment which acknowledges the SYNACK** (`server_isn+1` is set the acknowledgement field of the TCP segment header)
@@ -921,7 +921,7 @@ After this setup, all the segments will have the SYN bit set to 0 in their heade
 
 #### Tearing down a TCP connection
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\tcp-end.png">
+<img src="E:\Network -Sphare\computer-networking\images\tcp-end.png">
 
 The client decides to end the connection:
 
@@ -1116,7 +1116,7 @@ There 3 main components in the Internet: the IP Protocol (addressing, datagram f
 ### 4.4.1 Datagram Format
 A network layer packet is referred to as a **datagram**.
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\ipv4datagram.png">
+<img src="E:\Network -Sphare\computer-networking\images\ipv4datagram.png">
 
 Some fields:
 
@@ -1183,7 +1183,7 @@ Every IP-capable device needs an IP address. The number of connected devices gro
 **Network Address Translation (NAT)**
 The NAT-enabled router defines a **realm** (or private network) (a network whose addresses only have meaning to devices within that network) and it can use the whole 32 bit address space for devices connected to it, it will also have a public address used to communicate with the exterior. The picture is explicative.
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\nat.png">
+<img src="E:\Network -Sphare\computer-networking\images\nat.png">
 From the outside the router looks like a single device with a single IP address. It hides the details of the internal network from the outside world. Internal addresses can be assigned using DHCP.
 
 Problems with NAT:
@@ -1213,7 +1213,7 @@ Developed because of IPv4 address space exhaustion
 
 #### Datagram format
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\ipv6datagram.png">
+<img src="E:\Network -Sphare\computer-networking\images\ipv6datagram.png">
 
  - the size of the source and destination addresses is increased **from 32 to 128 bits**: every grain of sand on the planet can be addressable.
 Unicast and multicast addresses are joind by the **anycast address** which allow a datagram to be delivered to any one of a group of hosts.
@@ -1294,7 +1294,7 @@ Intra-AS routing protocols are also known as **interior gateway protocols**. His
 RIP was started for the Xerox Network Systems (XNS) architecture and was was widely deployed after being included in BSD. It is a **distance-vector** protocol working very similarly to what studied before. RIP uses *hop count* as a cost metric (each link has cost 1). Costs are from source router a destination subnet (not router-to-router as previously seen).
 **hop** = number of subnets traversed along the shortest path from source to destination subnet, including the destination subnet.
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\riphop.png">
+<img src="E:\Network -Sphare\computer-networking\images\riphop.png">
 
 Routing updates [messages] are exchanged between neighbors approximately every 30 seconds using a **RIP response message**, which contains a list of up to 25 destination subnets within the AS as well as the sender's distance to each of those subnets. Response messages are also known as **RIP advertisements**.
 Each router maintains a RIP table known as a **routing table** which includes both the router's distance vector and the router's forwarding table. There are three columns in it: the destination subnet, the identity of next router along shortest path to reach destination and the number of hops to get to the destination along the shortest path.
@@ -1482,7 +1482,7 @@ The MS could simply be split in four chunks, but real SSL does it differently.
 #### SSL Record
 The real SSL record:
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\sslrecord.png">
+<img src="E:\Network -Sphare\computer-networking\images\sslrecord.png">
 
  - Type: handshake message, data message, connection teardown message
  - Length: used to extract the records out of the TCP byte stream
@@ -1531,7 +1531,7 @@ An IPsec entity often maintains state information for many SAs (all outside clie
 ### 8.7.4 The IPsec Datagram
 IPsec has two different packet forms, one for **tunnel mode** and one for **transport mode**, the first one, being more appropriate for VPNs, is more widely deployed than the transport mode, we will therefore only focus on it.
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\ipsecdatagram.png">
+<img src="E:\Network -Sphare\computer-networking\images\ipsecdatagram.png">
 
 The headquarters's gateway receives an IPv4 datagram from inside the network directed to a VPN client outside. Here is what happens:
 
@@ -1674,7 +1674,7 @@ CSMA and CSMA/CD (collision detection) embody two rules:
  - **carrier sensing**: if a node is transmitting, the others wait until they detect no transmission for a short amount of time and begin transmission.
  - **collision detection**: a transmitting node listens to the channel while it's transmitting, if it detects that another node is transmitting, it stops transmitting and waits for a random amount of time before repeating the sense-and-transmit-when-idle-cycle.
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\csmacdDIA.png">
+<img src="E:\Network -Sphare\computer-networking\images\csmacdDIA.png">
 
 It is evident that the **propagation delay** of the channel plays a crucial role: the longer, the larger the chance that a carrier sensing node is not yet able to sense a transmission that has already begun.
 
@@ -1682,7 +1682,7 @@ It is evident that the **propagation delay** of the channel plays a crucial role
 When a node detects a collision, it ceases transmission immediately in Collision Detection.
 A link layer frame is prepared, if the node senses that the channel is idle (no energy is entering the adapter from the channel), it starts to transmit the frame, else it waits until it detects idle. While transmitting, the node monitors the channel for usage from other nodes, if the entire frame is transmitted without detecting usage, then the adapter is finished. If energy is detected from other adapters while transmitting, the node aborts transmission (stops), waits for  a random amount of time and then returns to checking for idle.
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\csmacdDIA.png">
+<img src="E:\Network -Sphare\computer-networking\images\csmacdDIA.png">
 
 The wait for random amount of time is required in order to avoid the nodes to keep colliding.
 
@@ -1735,7 +1735,7 @@ At the beginning the original Ethernet LAN used a coaxial bus to interconnect th
 
 #### Ethernet Frame Structure
 
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\ethernetframe.png">
+<img src="E:\Network -Sphare\computer-networking\images\ethernetframe.png">
 
  - *Data fields* (46 to 1,500 bytes): carries the IP datagram (or other network-layer datagram). The MTU (maximum transmission unit) is 1500 bytes, compensated with fragmentation. The minimum is 46, is less, the data is "stuffed" and the receiving network layer uses the length field to eliminate the stuffing
  - *Destination address* (6 bytes) destination MAC address.
@@ -1791,6 +1791,6 @@ They are both packet switches but switches are layer-2 packet switches while rou
 Switches are plug-and-play, have relatively high filtering and forwarding rates.
 However to **prevent the cycling of broadcast frames, the active topology of a swtiched network is restricted to a spanning tree**. A large network requires large ARP tables in hosts and routers and would generate substantial ARP traffic and processing. Switches are also susceptible to broadcast storms: if one goes crazy and send an endless stream of broadcast frames, the others will forward all of the frames resulting in a network collapse.
 Routers network addressing is hierarchical, packets do not normally cycle and the topology is not limited to a spanning tree even when the network has redundant paths. Therefore packets can use the best path between source and destination. But routers are not plug-and-play (a host need the IP to connect) and often have a larger per-packet processing time than switches. Finally two pronunciation cause a lot of disputes.
-<img src="E:\Network\computer-networking-notes-master\computer-networking-notes-master\computer-networking\images\interconnectiondevices.png">
+<img src="E:\Network -Sphare\computer-networking\images\interconnectiondevices.png">
 
 ### 5.4.4 Virtual Local Area Networks (VLANs)
