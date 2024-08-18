@@ -1792,5 +1792,4 @@ Switches are plug-and-play, have relatively high filtering and forwarding rates.
 However to **prevent the cycling of broadcast frames, the active topology of a swtiched network is restricted to a spanning tree**. A large network requires large ARP tables in hosts and routers and would generate substantial ARP traffic and processing. Switches are also susceptible to broadcast storms: if one goes crazy and send an endless stream of broadcast frames, the others will forward all of the frames resulting in a network collapse.
 Routers network addressing is hierarchical, packets do not normally cycle and the topology is not limited to a spanning tree even when the network has redundant paths. Therefore packets can use the best path between source and destination. But routers are not plug-and-play (a host need the IP to connect) and often have a larger per-packet processing time than switches. Finally two pronunciation cause a lot of disputes.
 <img src="E:\Network -Sphare\computer-networking\images\interconnectiondevices.png">
-
 ### 5.4.4 Virtual Local Area Networks (VLANs)
